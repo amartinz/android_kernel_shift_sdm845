@@ -49,6 +49,10 @@ static struct msm_bus_scale_pdata *get_pdata(struct device *dev,
 		return NULL;
 	}
 
+	if (of_node) {
+		pr_err("XXXXXX AMARTINZ: Node name: %s\n", of_node->full_name);
+	}
+
 	pdata = devm_kzalloc(dev, sizeof(struct msm_bus_scale_pdata),
 		GFP_KERNEL);
 	if (!pdata) {
